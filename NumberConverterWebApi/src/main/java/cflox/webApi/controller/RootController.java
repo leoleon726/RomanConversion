@@ -6,16 +6,17 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import cflox.webApi.service.NumberConverterService;
+
+import cflox.webApi.service.ConvertNumberService;
 
 @Controller
 public class RootController {
 	
 	@Autowired
-	private NumberConverterService numberConverter;
+	private ConvertNumberService convertNumber;
 	
-	public RootController(NumberConverterService numberConverter) {
-		this.numberConverter = numberConverter;
+	public RootController(ConvertNumberService numberConverter) {
+		this.convertNumber = numberConverter;
 		
 	}
 	
