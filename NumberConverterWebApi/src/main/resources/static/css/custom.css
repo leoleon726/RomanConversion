@@ -1,0 +1,36 @@
+a{
+	color:darkcyan
+}
+
+a:hover, a:focus{
+	color : darkblue;
+	text-decoration: none;
+}
+
+.card-collapse .card-header a[aria-expanded="true"] {
+color: green;
+}
+.btn {
+	background-color:cadetblue;
+}
+
+.nav-pills .nav-item .nav-link.active{
+	background-color:seagreen;
+}
+.card-collapse .card-header a:hover {
+	color:darkblue;
+}
+.error {
+	color: #ff0000;
+}
+
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
+
+
+
