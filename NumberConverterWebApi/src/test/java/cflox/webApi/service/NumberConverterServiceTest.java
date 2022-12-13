@@ -14,20 +14,23 @@ class NumberConverterServiceTest {
 
 	@Test
 	void testConvertDecimalToRoman() {
-		String romanI = convertNumber.convertDecimalToRoman(23);
+		String romanI = convertNumber.convertDecimalToRoman("23");
 		assertEquals(romanI, "XXIII");		
-		String romanII = convertNumber.convertDecimalToRoman(252);  
+		String romanII = convertNumber.convertDecimalToRoman("252");  
 		assertEquals(romanII, "CCLII");
-		String romanIII = convertNumber.convertDecimalToRoman(1000);  
+		String romanIII = convertNumber.convertDecimalToRoman("1000");  
 		assertEquals(romanIII, "M");
-		String romanIV = convertNumber.convertDecimalToRoman(1010);  
+		String romanIV = convertNumber.convertDecimalToRoman("1010");  
 		assertEquals(romanIV, "MX");
+
 	}
 
 	@Test
 	void testConvertBinaryToRoman() {
 		String romanI = convertNumber.convertBinaryToRoman("10111");		
 		assertEquals(romanI, "XXIII");
+		String romanII = convertNumber.convertBinaryToRoman("xs");		
+		assertEquals(romanII, "");
 	}
 
 }

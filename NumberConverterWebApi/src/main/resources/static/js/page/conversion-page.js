@@ -16,14 +16,14 @@ class ConversionForm {
 		this.decimalInput.addEventListener('change',(evt) => {
 			evt.preventDefault();
 			const el = evt.target;
-			this.decimalConversion(this.form);
+			this.decimalConversion(this.form,this.romanDecimal);
 		
 		});
 		
 		this.binaryInput.addEventListener('change',(evt) => {
 			evt.preventDefault();
 			const el = evt.target;
-			this.binaryConversion(this.form);
+			this.binaryConversion(this.form,this.romanBinary);
 			
 		});
 
@@ -31,7 +31,7 @@ class ConversionForm {
 
 	}
 	
-	decimalConversion(form){
+	decimalConversion(form,resultInput){
 		const data = new FormData(form);
 		const endpoint = '/conversion/decimal';
 
@@ -43,13 +43,14 @@ class ConversionForm {
 			processData: false,
    			 contentType: false,
 			success: function(data){
-				console.log ('I am here'+ data);
+				resultInput.value = data.romanResult;
+				
 			}
 		});
 		
 	}
 	
-	binaryConversion(form){
+	binaryConversion(form,resultInput){
 		const data = new FormData(form);
 		const endpoint = '/conversion/binary';
 
@@ -59,14 +60,13 @@ class ConversionForm {
 			url : endpoint,
 			dataType: 'json',
 			processData: false,
-   			 contentType: false,
+   			contentType: false,
 			success: function(data){
-				console.log ('I am here'+ data);
+				resultInput.value = data.romanResult;
 			}
 		});
 		
 	}
-
 }
 
 
